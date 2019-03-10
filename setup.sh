@@ -10,7 +10,6 @@ htpasswd -c /etc/squid/passwd $usrn
 touch /etc/squid/blacklist.acl	
 
 wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/privoxyconfig.conf
-cp /etc/squid/squid.conf /etc/init.d/squid
 
 service squid restart && update-rc.d squid defaults
 firew2
