@@ -12,4 +12,7 @@ wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/DavidFricker/squ
 
 #run
 service squid restart && update-rc.d squid defaults
-firew2
+
+# Opening Squid port 8888 for clients to connect
+#iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+#iptables-save
