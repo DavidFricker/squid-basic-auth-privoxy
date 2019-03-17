@@ -9,10 +9,14 @@ read -e -p "Your desired username: " usrn
 htpasswd -c /etc/squid/passwd $usrn
 touch /etc/squid/blacklist.acl	
 wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/privoxyconfig.conf
+wget -O /etc/squid/squidpt.conf https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/privoxyconfigpassthrough.conf
+wget -O /etc/init.d/squidpt https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/initdpassthrough
 
 #run
 service squid restart && update-rc.d squid defaults
+service squidpt restart && update-rc.d squidpt defaults
 
 # Opening Squid port 8888 for clients to connect
-#iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
-#iptables-save
+iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+iptables -I INPUT -p tcp --dport 9999 -j ACCEPT
+iptables-save
