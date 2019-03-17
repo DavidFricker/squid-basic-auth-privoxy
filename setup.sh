@@ -16,8 +16,10 @@ squid -z -f /etc/squid/squid.conf > /dev/null
 squid -z -f /etc/squid/squidpt.conf > /dev/null
 
 #run
-service squid restart && update-rc.d squid defaults
-service squidpt restart && update-rc.d squidpt defaults
+#service squid restart && update-rc.d squid defaults
+#service squidpt restart && update-rc.d squidpt defaults
+
+update-rc.d squidpt defaults
 
 # Opening Squid port 8888 for clients to connect
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
