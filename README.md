@@ -16,3 +16,5 @@ each conf file contains a PID file name to avoid conflict to allow both squid in
 tried and tested on debian 9.5
 
 Remeber to open the firewall through aws lightsail or ec2
+
+privoxy on `8888` and transparent proxy on `9999`
