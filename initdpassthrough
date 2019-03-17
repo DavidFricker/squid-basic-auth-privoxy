@@ -7,7 +7,7 @@
 # pidfile: /var/run/squid.pid
 #
 ### BEGIN INIT INFO
-# Provides:          squid
+# Provides:          squidpt
 # Required-Start:    $network $remote_fs $syslog
 # Required-Stop:     $network $remote_fs $syslog
 # Should-Start:      $named
