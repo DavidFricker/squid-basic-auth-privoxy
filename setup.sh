@@ -12,6 +12,9 @@ wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/DavidFricker/squ
 wget -O /etc/squid/squidpt.conf https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/privoxyconfigpassthrough.conf
 wget -O /etc/init.d/squidpt https://raw.githubusercontent.com/DavidFricker/squid-basic-auth-privoxy/master/initdpassthrough
 
+squid -z -f /etc/squid/squid.conf > /dev/null
+squid -z -f /etc/squid/squidpt.conf > /dev/null
+
 #run
 service squid restart && update-rc.d squid defaults
 service squidpt restart && update-rc.d squidpt defaults
