@@ -11,3 +11,6 @@ run squid to start both servers
 `sudo squid -f /etc/squid/squid.conf`
 
 each conf file contains a PID file name to avoid conflict to allow both squid instances to run at the same time
+
+
+tried and tested on debian 9.5
